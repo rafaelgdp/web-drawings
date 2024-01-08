@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Shapes</title>
+</head>
+
+<body>
+    <canvas width="600" height="600"></canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d");
+        let width = canvas.width;
+        let height = canvas.height;
+
+        context.fillStyle = "cornflowerblue";
+        context.fillRect(0, 0, width, height);
+
+        let squareSide = 400;
+        let squarePosition = {
+            x: width / 2 - squareSide / 2,
+            y: height / 2 - squareSide / 2,
+        };
+
+        context.lineWidth = 4;
+        context.beginPath();
+        context.rect(squarePosition.x, squarePosition.y, squareSide, squareSide);
+        context.fillStyle = "red";
+        context.stroke();
+        context.beginPath();
+        context.arc(width / 2, height / 2, squareSide / 2, 0, Math.PI * 2);
+        context.fill();
+        context.stroke();
+    </script>
+</body>
+
+</html>
